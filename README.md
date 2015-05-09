@@ -1,0 +1,1 @@
+A quick little tool built for the Glass Arcadia group. Pings a server and retrieves players online. More features planned.

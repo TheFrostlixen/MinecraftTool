@@ -11,15 +11,11 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
 [Rr]elease/
-[Rr]eleases/
 x64/
 x86/
 build/
 bld/
-[Bb]in/
 [Oo]bj/
 
 # Visual Studo 2015 cache/options directory
@@ -62,9 +58,9 @@ dlldata.c
 *.pidb
 *.svclog
 *.scc
-
-# Chutzpah Test files
-_Chutzpah*
+*.vshost.exe
+*.vshost.exe.config
+*.manifest
 
 # Visual C++ cache files
 ipch/
