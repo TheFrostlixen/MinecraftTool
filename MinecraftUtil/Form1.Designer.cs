@@ -45,9 +45,9 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupPlayers.SuspendLayout();
@@ -190,13 +190,21 @@
             this.panel1.Size = new System.Drawing.Size(176, 368);
             this.panel1.TabIndex = 0;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(176, 368);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Resources";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // toolStripStatusLabel2
             // 
-            this.toolStripStatusLabel2.Image = global::MinecraftUtil.Properties.Resources.glassarcadia;
+            this.toolStripStatusLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel2.Image")));
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(104, 17);
             this.toolStripStatusLabel2.Text = "Not Connected";
-            this.toolStripStatusLabel2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.toolStripStatusLabel2.Click += new System.EventHandler(this.toolStripStatusLabel2_Click);
             // 
             // statusStrip1
@@ -209,15 +217,6 @@
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(176, 368);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Resources";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
