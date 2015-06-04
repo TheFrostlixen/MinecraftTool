@@ -1,31 +1,23 @@
 function ping() {
 	// build url
-	var url = "http://minetools.eu/query/".concat( document.getElementById("server").value, "/", document.getElementById("port").value );
+	var url = "http://api.minetools.eu/query/".concat( document.getElementById("server").value, "/", document.getElementById("port").value );
 	
 	// update status
-	document.getElementById("status").innerHTML = url;
-	
-	// get json string
-	getJSONP( url, function(data){
-		
-	} );
+	document.getElementById("url").innerHTML = url;
+
+	// jQuery is not defined, idk why, fml
+	if (jQuery){
+		jQuery.get( url+"?jsoncallback=?", function( data )
+		{
+			$("body")
+			.append("Name: " + data.Map)
+			.append("Time: " + data.Players);
+		}, "json" );
+	}
+	else{ alert("jQuery is undefined."); }
 	
 	// parse json data into list
 	
 	// display list on html side
 	
-}
-function getJSONP(url, success) {
-
-    var ud = '_' + +new Date,
-        script = document.createElement('script'),
-        head = document.getElementsByTagName('head')[0] || document.documentElement;
-
-    window[ud] = function(data) {
-        head.removeChild(script);
-        success && success(data);
-    };
-
-    script.src = url.replace('callback=?', 'callback=' + ud);
-    head.appendChild(script);
 }
