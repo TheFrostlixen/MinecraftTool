@@ -211,7 +211,7 @@ window.addEvent('domready', function(){
 				window.localStorage.CircleHash = hash;
 			}
 
-			window.location.hash = hash.toBase64();
+//			window.location.hash = hash.toBase64();
 		}, 1000);
 		
 		if( resultblock.get('data-hash') != hash ) {
