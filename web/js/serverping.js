@@ -10,14 +10,16 @@ function ping() {
 	document.getElementById("url").innerHTML = url;
 
 	// get json data from server
-	var httpxml = new XMLHttpRequest({mozSystem: true});
-	httpxml.onload = setJson;
+	//var httpxml = new XMLHttpRequest({mozSystem: true});
+	//httpxml.onload = setJson;
 	/* So the problem is that the "Access-Control-Allow-Origin" header (CORS) is not enabled. This is a server-side issue, need a workaround. FML. */
-	httpxml.onerror = function() { alert('Error communicating with server.'); };
-	httpxml.open( "GET", url, false );
-	httpxml.send();
+	//httpxml.onerror = function() { alert('Error communicating with server.'); };
+	//httpxml.open( "GET", url, false );
+	//httpxml.send();
 	//json = httpxml.responseText;
-	//var obj = JSON.parse( json );
+	
+	$j.getJson( url, function() { alert('holy shitballs'); });
+	var obj = JSON.parse( json );
 	//document.getElementById("p1").innerHTML = obj.Playerlist;
 	
 	// display playerlist on html side

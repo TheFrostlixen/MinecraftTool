@@ -4,16 +4,48 @@
 	<title>MineTool</title>
 
 	<!-- scripts -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> <!--COLLISION -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!--COLLISION -->
 	<script src="js/bootstrap.js"></script>
-	<script src="js/serverping.js"></script>
-	<script>jQuery.noConflict(true)</script> <!-- fixed collision -->
+	
+	
+	<script>
+		function ping() {
+			var server = encodeURIComponent( document.getElementById("server").value );
+			var port = encodeURIComponent( document.getElementById("port").value );
+			var url = "http://api.minetools.eu/query/".concat( server, "/", port );
+			
+			// get data from server
+			url = "http://mysafeinfo.com/api/data?list=englishmonarchs&format=json";
+			var text = $j.get( url, "", function(data){}, "json"  );
+			var compare = '{' +
+				'"Playerlist": "null",' +
+				'"HostName": "A Minecraft Server",' +
+				'"GameType": "SMP",' +
+				'"Version": "1.8",' +
+				'"Plugins": "",' +
+				'"Map": "world",' +
+				'"Players": 0,' +
+				'"MaxPlayers": 20,' +
+				'"HostPort": 25565,' +
+				'"HostIp": "23.95.29.207",' +
+				'"Software": "Vanilla"' +
+			'}'
+			
+			// parse json data
+			var obj = JSON.parse( text.responseText );
+			var known = JSON.parse( compare );
+			
+			// list players
+			document.getElementById("p1").innerHTML = obj[0].nm;
+		}
+	</script>
+	
+	
+	<script>$j = jQuery.noConflict(true)</script> <!-- fixed collision -->
+	<!--<script src="js/serverping.js"></script>-->
+
 	<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.2/mootools.js"></script>
 	<script src="js/circle.js"></script>
-	<?php
-		 header("Access-Control-Allow-Origin: *");
-	?>
 	
 	<!-- styles -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
