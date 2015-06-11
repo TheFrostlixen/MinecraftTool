@@ -61,6 +61,7 @@ dlldata.c
 *.vshost.exe
 *.vshost.exe.config
 *.manifest
+*.bat
 
 # Visual C++ cache files
 ipch/

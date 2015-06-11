@@ -10,7 +10,6 @@ $SERVER_IP = "23.95.29.207"; //Insert the IP of the server you want to query.
 $SERVER_PORT = "25565"; //Insert the PORT of the server you want to ping. Needed to get the favicon, motd, players online and players max. etc
 $QUERY_PORT = "25565"; //Port of query.port="" in your server.properties. Needed for the playerlist! Can be the same like the port or different. Query must be enabled in your server.properties file!
 
-$HEADS = "normal"; //"normal" / "3D"
 $show_max = "unlimited"; // how much playerheads should we display? "unlimited" / "10" / "53"/ ...
 $SHOW_FAVICON = "on"; //"off" / "on"
 
@@ -69,7 +68,7 @@ if(empty($query['error'])) {
 					<tbody>
 						<tr>
 							<td><b>IP</b></td>
-							<td><?php echo $SERVER_IP; ?></td>
+							<td><?php echo $SERVER_IP . ':' . $SERVER_PORT; ?></td>
 						</tr>
 					<?php if(empty($ping['error'])) { ?>
 						<tr>
@@ -103,12 +102,7 @@ if(empty($query['error'])) {
 			<div class="col-md-8" style="font-size:0px;">
 				<h3><?php echo htmlspecialchars($TITLE_BLOCK_TWO); ?></h3>
 				<?php
-				if($HEADS == "3D") {
-					$url = "https://cravatar.eu/helmhead/";
-				} else {
-					$url = "https://cravatar.eu/helmavatar/";
-				}
-
+				$url = "https://cravatar.eu/helmavatar/";
 				if(empty($query['error'])) {
 					if($playerlist != "null") { //is at least one player online? Then display it!
 						$shown = "0";

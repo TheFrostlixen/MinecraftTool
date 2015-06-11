@@ -6,56 +6,36 @@
 	<!-- scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!--COLLISION -->
 	<script src="js/bootstrap.js"></script>
-	
-	
-	<script>
-		function ping() {
-			var server = encodeURIComponent( document.getElementById("server").value );
-			var port = encodeURIComponent( document.getElementById("port").value );
-			var url = "http://api.minetools.eu/query/".concat( server, "/", port );
-			
-			// get data from server
-			//url = "http://mysafeinfo.com/api/data?list=englishmonarchs&format=json";
-			var text = $j.get(	url,
-								"",
-								function(data) { formatJson(data); },
-								"json"
-							);
-			/* 
-			var compare = '{' +
-				'"Playerlist": "null",' +
-				'"HostName": "A Minecraft Server",' +
-				'"GameType": "SMP",' +
-				'"Version": "1.8",' +
-				'"Plugins": "",' +
-				'"Map": "world",' +
-				'"Players": 0,' +
-				'"MaxPlayers": 20,' +
-				'"HostPort": 25565,' +
-				'"HostIp": "23.95.29.207",' +
-				'"Software": "Vanilla"' +
-			'}'
-			var known = JSON.parse( compare );
-			*/
-		}
-		
-		function formatJson( data ) {
-			// parse json data
-			var obj = JSON.parse( data );
-			
-			// list players
-			document.getElementById("p1").innerHTML = obj.Map;
-		}
-	</script>
-	
-	
 	<script>$j = jQuery.noConflict(true)</script> <!-- fixed collision -->
-	<!--<script src="js/serverping.js"></script>-->
-
 	<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.2/mootools.js"></script>
 	<script src="js/circle.js"></script>
+	<?php
+	// TODO call this every time user clicks 'Ping' button, update below
+		$SERVER_IP = "23.95.29.207"; //Insert the IP of the server you want to query. 
+		$SERVER_PORT = "25565"; //Insert the PORT of the server you want to ping. Needed to get the favicon, motd, players online and players max. etc
+
+		$SHOW_FAVICON = "on"; //"off" / "on"
+		
+		$ping = json_decode(file_get_contents('http://api.minetools.eu/ping/' . $SERVER_IP . '/' . $SERVER_PORT . ''), true);
+		$query = json_decode(file_get_contents('http://api.minetools.eu/query/' . $SERVER_IP . '/' . $SERVER_PORT . ''), true);
+
+		//Put the collected player information into an array for later use.
+		if(empty($ping['error'])) { 
+			$version = $ping['version']['name'];
+			$online = $ping['players']['online'];
+			$max = $ping['players']['max'];
+			$motd = $ping['description'];
+			$favicon = $ping['favicon'];
+		}
+
+		if(empty($query['error'])) {
+			$playerlist = $query['Playerlist'];
+		}
+	?>
 	
+
 	<!-- styles -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/tab-content.css">
 	<link rel="stylesheet" href="css/circle.css">
@@ -68,24 +48,24 @@
 		<ul id="tabs" class="nav nav-tabs nav-justified" data-tabs="tabs">
 			<li class="active"><a href="#player" data-toggle="tab">Server Info</a></li>
 			<li><a href="#circle" data-toggle="tab">Circle Generator</a></li>
-			<li><a href="#coords" data-toggle="tab">Coordinate Tracker</a></li>
+			<li><a href="#coords" data-toggle="tab">Guides</a></li>
 		</ul>
 		<!-- Tab Content -->
 		<div id="tab-content" class="tab-content">
 			<div class="tab-pane active" id="player">
 				<!-- Player List -->
-				<p id="url">...</p>
+				<div id="url"></div>
 				Server Address: <input type="text" id="server" value="23.95.29.207"> <br>
 				Port Number:&nbsp&nbsp&nbsp <input type="number" id="port" min="1" max="99999" value="25565"> <br>
-				<button type="button" id="ping" onclick="ping()">Ping</button>
+				<button type="button" id="ping" onclick="ping()">Ping</button> <!-- TODO HOW TO CALL PHP -->
 				
 				
 				
 				
 				
 				<div class="row">
-					<div class="col-md-4">
-						<h3>General Information</h3>
+					<div class="col-md-1">
+						<h4><b>General Information</b></h4>
 						<table class="table table-striped">
 							<tbody>
 								<tr>
@@ -106,7 +86,7 @@
 							<?php } ?>
 								<tr>
 									<td><b>Status</b></td>
-									<td><?php if(empty($ping['error'])) { echo "<i class="fa fa-check-circle"></i> Server is online"; } else { echo "<i class=\"fa fa-times-circle\"></i> Server is offline";}?></td>
+									<td><?php if(empty($ping['error'])) { echo "<i class=\"fa fa-check-circle\"></i><font color=\"#00DA00\"> Server is online</font>"; } else { echo "<i class=\"fa fa-times-circle\"></i><font color=\"#DA0000\"> Server is offline</font>";}?></td>
 								</tr>
 							<?php if(empty($ping['error'])) { ?>
 							<?php if(!empty($favicon)) { ?>
@@ -120,31 +100,24 @@
 						</table>
 					</div>
 					<div class="col-md-8" style="font-size:0px;">
-						<h3>Players</h3>
+						<h4><b>Players</b></h4>
 						<?php
 						$url = "https://cravatar.eu/helmavatar/";
 						if(empty($query['error'])) {
-							if($playerlist != "null") { //is at least one player online? Then display it!
+							if($playerlist != "null") {
 								$shown = "0";
 								foreach ($playerlist as $player) {
 									$shown++;
-									if($shown < $show_max + 1 || $show_max == "unlimited") {
 								?>
-										<a data-placement="top" rel="tooltip" style="display: inline-block;" title="<?php echo $player;?>">
-										<img src="<?php echo $url.$player;?>/50" size="40" width="40" height="40" style="width: 40px; height: 40px; margin-bottom: 5px; margin-right: 5px; border-radius: 3px; "/></a>
-							<?php 	}
+									<a data-placement="top" rel="tooltip" style="display: inline-block;" title="<?php echo $player;?>">
+									<img src="<?php echo $url.$player;?>/50" size="40" width="40" height="40" style="width: 40px; height: 40px; margin-bottom: 5px; margin-right: 5px; border-radius: 3px; "/></a>
+							<?php
 								}
-								if($shown > $show_max && $show_max != "unlimited") {
-									echo '<div class="col-md-8" style="font-size:16px; margin-left: 0px;">';
-									echo "and " . (count($playerlist) - $show_max) . " more ...";
-									echo '</div>';
-								}
-							} else {
-								echo "<div class=\"alert alert-info\" style=\"font-size:16px;\"> There are no players online at the moment! <i class=\"fa fa-frown-o\"></i></div>";
 							}
-						} else {
-							echo "<div class=\"alert alert-danger\" style=\"font-size:16px;\"> Query must be enabled in your server.properties file! <i class=\"fa fa-meh-o\"></i></div>";
-						} ?>
+							else { echo "<div class=\"alert alert-info\" style=\"font-size:12px;\"> No players online.</div>"; }
+						}
+						else { echo "<div class=\"alert alert-danger\" style=\"font-size:12px;\"> Query must be enabled in your server.properties file! <i class=\"fa fa-meh-o\"></i></div>"; }
+							?>
 					</div>
 				</div>
 				
@@ -171,8 +144,8 @@
 				<br/><br/>
 				<div id="result"></div>
 			</div>
-			<div class="tab-pane" id="coords">
-				<!-- Coordinate Tracker -->
+			<div class="tab-pane" id="guides">
+				<!-- Guides -->
 				
 			</div>
 		</div>
