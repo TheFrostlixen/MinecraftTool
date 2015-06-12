@@ -72,8 +72,8 @@
 			<div class="tab-pane active" id="player">
 				<!-- Player List -->
 				<div id="url"></div>
-				Server Address: <input type="text" id="server" value=""> <br>
-				Port Number:&nbsp&nbsp&nbsp <input type="number" id="port" min="1" max="99999" value=""> <br>
+				Server Address: <input type="text" id="server" value=<?php echo $_GET['server']; ?>> <br>
+				Port Number:&nbsp&nbsp&nbsp <input type="number" id="port" min="1" max="99999" value=<?php echo $_GET['port']; ?>> <br>
 				<button type="button" id="ping" onclick="ping()">Ping</button>
 				<button type="button" id="ping" onclick=window.location.href="tool.php?ping=true&server=23.95.29.207&port=25565">Glass Arcadia</button>
 				<!-- DEBUG <a href="tool.php">return</a> -->
