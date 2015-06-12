@@ -47,7 +47,6 @@
 			$playerlist = $query['Playerlist'];
 		}
 	}
-	
 	?>
 	
 
@@ -65,7 +64,7 @@
 		<ul id="tabs" class="nav nav-tabs nav-justified" data-tabs="tabs">
 			<li class="active"><a href="#player" data-toggle="tab">Server Info</a></li>
 			<li><a href="#circle" data-toggle="tab">Circle Generator</a></li>
-			<li><a href="#coords" data-toggle="tab">Guides</a></li>
+			<li><a href="guides" data-toggle="tab">Guides</a></li>
 		</ul>
 		<!-- Tab Content -->
 		<div id="tab-content" class="tab-content">
@@ -78,11 +77,6 @@
 				<button type="button" id="ping" onclick=window.location.href="tool.php?ping=true&server=23.95.29.207&port=25565">Glass Arcadia</button>
 				<!-- DEBUG <a href="tool.php">return</a> -->
 				<br /><br />
-				
-				
-				
-				
-				
 				<div class="row">
 					<div class="col-md-1">
 						<h4><b>General Information</b></h4>
@@ -140,16 +134,6 @@
 							?>
 					</div>
 				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				</ul>
 			</div>
 			<div class="tab-pane" id="circle">
 				<!-- Circle Generator -->
@@ -166,9 +150,43 @@
 			</div>
 			<div class="tab-pane" id="guides">
 				<!-- Guides -->
-				
+				<select id="guidelist">
+					<optionselected="selected">Block IDs</option> <!--disabled="disabled" -->
+					<option>Food</option>
+					<option>Potions</option>
+					<option>Redstone</option>
+					<!--
+					<select id="ddlViewBy">
+					<option value="1">test1</option>
+					<option value="2" selected="selected">test2</option>
+					<option value="3">test3</option>
+					</select>
+					
+					var e = document.getElementById("ddlViewBy");
+					var indexValue = e.options[e.selectedIndex].value; // value=2
+					var stringValue = e.options[e.selectedIndex].text; // value="test2"
+					-->
+				</select>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
