@@ -4,15 +4,30 @@
 	<title>MineTool</title>
 
 	<!-- scripts -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!--COLLISION -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.js"></script>
-	<script>$j = jQuery.noConflict(true)</script> <!-- fixed collision -->
+	<script>$j = jQuery.noConflict(true)</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.2/mootools.js"></script>
 	<script src="js/circle.js"></script>
+	<script type="text/javascript">
+		// TODO use ajax to call (shouldn't have to reload page)
+		function ping()
+		{
+		/*
+			$j.ajax( { type: "GET", data:{ ping: 'true', server: document.getElementById("server").value, port: document.getElementById("port").value }, success: function(data) {
+				// use this if you want to process the returned data
+				//alert('complete, returned:' + data);
+				window.location.href = "tool.php?ping=true&server=" + document.getElementById("server").value + "&port=" + document.getElementById("port").value;
+			} });
+		*/
+			window.location.href = "tool.php?ping=true&server=" + document.getElementById("server").value + "&port=" + document.getElementById("port").value;
+		}
+	</script>
 	<?php
-	// TODO call this every time user clicks 'Ping' button, update below
-		$SERVER_IP = "23.95.29.207"; //Insert the IP of the server you want to query. 
-		$SERVER_PORT = "25565"; //Insert the PORT of the server you want to ping. Needed to get the favicon, motd, players online and players max. etc
+	// TODO update HTML elements when called
+	if (isset($_GET['ping'])) {
+		$SERVER_IP = $_GET['server']; //"23.95.29.207"; //Insert the IP of the server you want to query. 
+		$SERVER_PORT = $_GET['port']; //"25565"; //Insert the PORT of the server you want to ping. Needed to get the favicon, motd, players online and players max. etc
 
 		$SHOW_FAVICON = "on"; //"off" / "on"
 		
@@ -31,6 +46,8 @@
 		if(empty($query['error'])) {
 			$playerlist = $query['Playerlist'];
 		}
+	}
+	
 	?>
 	
 
@@ -55,9 +72,12 @@
 			<div class="tab-pane active" id="player">
 				<!-- Player List -->
 				<div id="url"></div>
-				Server Address: <input type="text" id="server" value="23.95.29.207"> <br>
-				Port Number:&nbsp&nbsp&nbsp <input type="number" id="port" min="1" max="99999" value="25565"> <br>
-				<button type="button" id="ping" onclick="ping()">Ping</button> <!-- TODO HOW TO CALL PHP -->
+				Server Address: <input type="text" id="server" value=""> <br>
+				Port Number:&nbsp&nbsp&nbsp <input type="number" id="port" min="1" max="99999" value=""> <br>
+				<button type="button" id="ping" onclick="ping()">Ping</button>
+				<button type="button" id="ping" onclick=window.location.href="tool.php?ping=true&server=23.95.29.207&port=25565">Glass Arcadia</button>
+				<!-- DEBUG <a href="tool.php">return</a> -->
+				<br /><br />
 				
 				
 				
@@ -70,7 +90,7 @@
 							<tbody>
 								<tr>
 									<td><b>IP</b></td>
-									<td><?php echo $SERVER_IP . ':' . $SERVER_PORT; ?></td>
+									<td><?php if(!empty($SERVER_IP)) { echo $SERVER_IP . ':' . $SERVER_PORT; } ?></td>
 								</tr>
 							<?php if(empty($ping['error'])) { ?>
 								<tr>
@@ -81,12 +101,12 @@
 							<?php if(empty($ping['error'])) { ?>
 								<tr>
 									<td><b>Players</b></td>
-									<td><?php echo "".$online." / ".$max."";?></td>
+									<td><?php if(!empty($version)) { echo "".$online." / ".$max.""; } ?></td>
 								</tr>
 							<?php } ?>
 								<tr>
 									<td><b>Status</b></td>
-									<td><?php if(empty($ping['error'])) { echo "<i class=\"fa fa-check-circle\"></i><font color=\"#00DA00\"> Server is online</font>"; } else { echo "<i class=\"fa fa-times-circle\"></i><font color=\"#DA0000\"> Server is offline</font>";}?></td>
+									<td><?php if(empty($version)){} else if (empty($ping['error'])) {echo "<i class=\"fa fa-check-circle\"></i><font color=\"#00DA00\"> Server is online</font>";} else{echo "<i class=\"fa fa-times-circle\"></i><font color=\"#DA0000\"> Server is offline</font>";} ?></td>
 								</tr>
 							<?php if(empty($ping['error'])) { ?>
 							<?php if(!empty($favicon)) { ?>
