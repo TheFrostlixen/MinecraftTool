@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	
+</head>
+
+<body>
+	<ul id="products">
+		<li name="listitem">Apple</li>
+		<li name="listitem">Banana</li>
+		<li name="listitem">Mango</li>
+	</ul>
+	<input id="filter" >
+	<script type="text/javascript">
+		$('#filter').keyup(function() {
+			var ref = $('#id1');
+			var items = document.getElementsByName("listitem"); //$('#id1');
+			for (var i = 0, len = items.length; i < len; i++) {
+				var re = new RegExp($(this).val(), "i"); // "i" means it's case-insensitive
+				items[i].show().filter(function() {
+					return !re.test($(this).text());
+				}).hide();
+			}
+		});
+	</script>
+</body>
+</html>

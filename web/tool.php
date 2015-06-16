@@ -15,16 +15,28 @@
 		{
 		/*
 			$j.ajax( { type: "GET", data:{ ping: 'true', server: document.getElementById("server").value, port: document.getElementById("port").value }, success: function(data) {
-				// use this if you want to process the returned data
-				//alert('complete, returned:' + data);
-				window.location.href = "tool.php?ping=true&server=" + document.getElementById("server").value + "&port=" + document.getElementById("port").value;
+				//alert('complete, returned:' + data); //returns webpage in html...
 			} });
 		*/
 			window.location.href = "tool.php?ping=true&server=" + document.getElementById("server").value + "&port=" + document.getElementById("port").value;
 		}
 	</script>
+	<script type="text/javascript">
+	function OnChange() {
+		
+	}
+	</script>
+	<script type="text/javascript">
+	var $products = $j('#products li');
+	$j('#filter').keyup(function() {
+		var re = new RegExp($j(this).val(), "i"); // "i" means it's case-insensitive
+		$products.show().filter(function() {
+			return !re.test($(this).text());
+		}).hide();
+	});
+	</script>
 	<?php
-	// TODO update HTML elements when called
+	// TODO update HTML elements asynch when called
 	if (isset($_GET['ping'])) {
 		$SERVER_IP = $_GET['server']; //"23.95.29.207"; //Insert the IP of the server you want to query. 
 		$SERVER_PORT = $_GET['port']; //"25565"; //Insert the PORT of the server you want to ping. Needed to get the favicon, motd, players online and players max. etc
@@ -55,6 +67,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/tab-content.css">
 	<link rel="stylesheet" href="css/circle.css">
+	<link rel="stylesheet" href="css/noscroll.css">
 </head>
 
 <body>
@@ -64,7 +77,7 @@
 		<ul id="tabs" class="nav nav-tabs nav-justified" data-tabs="tabs">
 			<li class="active"><a href="#player" data-toggle="tab">Server Info</a></li>
 			<li><a href="#circle" data-toggle="tab">Circle Generator</a></li>
-			<li><a href="guides" data-toggle="tab">Guides</a></li>
+			<li><a href="#guides" data-toggle="tab">Guides</a></li>
 		</ul>
 		<!-- Tab Content -->
 		<div id="tab-content" class="tab-content">
@@ -78,7 +91,7 @@
 				<!-- DEBUG <a href="tool.php">return</a> -->
 				<br /><br />
 				<div class="row">
-					<div class="col-md-1">
+					<div class="col-md-8">
 						<h4><b>General Information</b></h4>
 						<table class="table table-striped">
 							<tbody>
@@ -138,24 +151,24 @@
 			<div class="tab-pane" id="circle">
 				<!-- Circle Generator -->
 				Width:&nbsp <input tabindex="1" type="number" size="5" id="diameter" value="8" max="2048" autocomplete="off" autofocus>
-				Block Count: <span id="blockcount"></span><br/>
+				Block Count: <span id="blockcount"></span><br />
 				Height: <input tabindex="2" type="number" size="5" id="height" value="8" max="2048" autocomplete="off">
 				<select id="thickness" tabindex="3">
 					<option selected="selected">thin</option>
 					<option>thick</option>
 					<option>filled</option>
 				</select>
-				<br/><br/>
+				<br /><br />
 				<div id="result"></div>
 			</div>
 			<div class="tab-pane" id="guides">
 				<!-- Guides -->
-				<select id="guidelist">
-					<optionselected="selected">Block IDs</option> <!--disabled="disabled" -->
+				<select id="guidelist" onchange="OnChange()">
+					<option selected="selected">Block IDs</option>
 					<option>Food</option>
 					<option>Potions</option>
 					<option>Redstone</option>
-					<!--
+					<!-- EXAMPLE SELECTION
 					<select id="ddlViewBy">
 					<option value="1">test1</option>
 					<option value="2" selected="selected">test2</option>
@@ -167,6 +180,16 @@
 					var stringValue = e.options[e.selectedIndex].text; // value="test2"
 					-->
 				</select>
+				
+				<ul id="products">
+					<li>Apple</li>
+					<li>Banana</li>
+					<li>Mango</li>
+				</ul>
+				<input id="filter" >
+				
+				<br /><br />
+				<div id="guidepanel"></div>
 			</div>
 		</div>
 	</div>
