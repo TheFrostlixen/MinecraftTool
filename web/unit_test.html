@@ -3,27 +3,33 @@
 <head>
 	<!-- scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#filter').keyup(function() {
+				var re = new RegExp($('#filter').val(), "i");
+				$('#list').children().each( function(i) {
+					var toHide = !re.test($(this).text());
+					(toHide) ? $(this).hide() : $(this).show();
+				});
+		});
+	});
+	</script>
 	
+	<style>
+	ul {
+		list-style-type: none;
+	}
+	</style>
+
 </head>
 
 <body>
-	<ul id="products">
-		<li name="listitem">Apple</li>
-		<li name="listitem">Banana</li>
-		<li name="listitem">Mango</li>
+	<ul id="list">
+			<li>1&emsp;Apple</li>
+			<li>2&emsp;Banana</li>
+			<li>3&emsp;Mango</li>
 	</ul>
 	<input id="filter" >
-	<script type="text/javascript">
-		$('#filter').keyup(function() {
-			var ref = $('#id1');
-			var items = document.getElementsByName("listitem"); //$('#id1');
-			for (var i = 0, len = items.length; i < len; i++) {
-				var re = new RegExp($(this).val(), "i"); // "i" means it's case-insensitive
-				items[i].show().filter(function() {
-					return !re.test($(this).text());
-				}).hide();
-			}
-		});
-	</script>
+
 </body>
 </html>
