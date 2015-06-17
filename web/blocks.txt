@@ -1,0 +1,693 @@
+0&emsp;Air 
+1&emsp;Stone 
+1:1&emsp;Granite 
+1:2&emsp;Polished Granite 
+1:3&emsp;Diorite 
+1:4&emsp;Polished Diorite 
+1:5&emsp;Andesite 
+1:6&emsp;Polished Andesite 
+2&emsp;Grass 
+3&emsp;Dirt 
+3:1&emsp;Coarse Dirt 
+3:2&emsp;Podzol 
+4&emsp;Cobblestone 
+5&emsp;Wooden Plank (Oak) 
+5:1&emsp;Wooden Plank (Spruce) 
+5:2&emsp;Wooden Plank (Birch) 
+5:3&emsp;Wooden Plank (Jungle) 
+5:4&emsp;Wooden Plank (Acacia) 
+5:5&emsp;Wooden Plank (Dark Oak) 
+6&emsp;Sapling (Oak) 
+6:1&emsp;Sapling (Spruce) 
+6:2&emsp;Sapling (Birch) 
+6:3&emsp;Sapling (Jungle) 
+6:4&emsp;Sapling (Acacia) 
+6:5&emsp;Sapling (Dark Oak) 
+7&emsp;Bedrock 
+8&emsp;Water 
+9&emsp;Water (No Spread) 
+10&emsp;Lava 
+11&emsp;Lava (No Spread) 
+12&emsp;Sand 
+12:1&emsp;Red Sand 
+13&emsp;Gravel 
+14&emsp;Gold Ore 
+15&emsp;Iron Ore 
+16&emsp;Coal Ore 
+17&emsp;Wood (Oak) 
+17:1&emsp;Wood (Spruce) 
+17:2&emsp;Wood (Birch) 
+17:3&emsp;Wood (Jungle) 
+17:4&emsp;Wood (Oak 4) 
+17:5&emsp;Wood (Oak 5) 
+18&emsp;Leaves (Oak) 
+18:1&emsp;Leaves (Spruce) 
+18:2&emsp;Leaves (Birch) 
+18:3&emsp;Leaves (Jungle) 
+19&emsp;Sponge 
+19:1&emsp;Wet Sponge 
+20&emsp;Glass 
+21&emsp;Lapis Lazuli Ore 
+22&emsp;Lapis Lazuli Block 
+23&emsp;Dispenser 
+24&emsp;Sandstone 
+24:1&emsp;Sandstone (Chiseled) 
+24:2&emsp;Sandstone (Smooth) 
+25&emsp;Note Block 
+26&emsp;Bed (Block) 
+27&emsp;Rail (Powered) 
+28&emsp;Rail (Detector) 
+29&emsp;Sticky Piston 
+30&emsp;Cobweb 
+31&emsp;Tall Grass (Dead Shrub) 
+31:1&emsp;Tall Grass 
+31:2&emsp;Tall Grass (Fern) 
+32&emsp;Dead Shrub 
+33&emsp;Piston 
+34&emsp;Piston (Head) 
+35&emsp;Wool 
+35:1&emsp;Orange Wool 
+35:2&emsp;Magenta Wool 
+35:3&emsp;Light Blue Wool 
+35:4&emsp;Yellow Wool 
+35:5&emsp;Lime Wool 
+35:6&emsp;Pink Wool 
+35:7&emsp;Gray Wool 
+35:8&emsp;Light Gray Wool 
+35:9&emsp;Cyan Wool 
+35:10&emsp;Purple Wool 
+35:11&emsp;Blue Wool 
+35:12&emsp;Brown Wool 
+35:13&emsp;Green Wool 
+35:14&emsp;Red Wool 
+35:15&emsp;Black Wool 
+36&emsp;Piston (Moving) 
+37&emsp;Dandelion 
+38&emsp;Poppy 
+38:1&emsp;Blue Orchid 
+38:2&emsp;Allium 
+38:3&emsp;Azure Bluet 
+38:4&emsp;Red Tulip 
+38:5&emsp;Orange Tulip 
+38:6&emsp;White Tulip 
+38:7&emsp;Pink Tulip 
+38:8&emsp;Oxeye Daisy 
+39&emsp;Brown Mushroom 
+40&emsp;Red Mushroom 
+41&emsp;Block of Gold 
+42&emsp;Block of Iron 
+43&emsp;Stone Slab (Double) 
+43:1&emsp;Sandstone Slab (Double) 
+43:2&emsp;Wooden Slab (Double) 
+43:3&emsp;Cobblestone Slab (Double) 
+43:4&emsp;Brick Slab (Double) 
+43:5&emsp;Stone Brick Slab (Double) 
+43:6&emsp;Nether Brick Slab (Double) 
+43:7&emsp;Quartz Slab (Double) 
+43:8&emsp;Smooth Stone Slab (Double) 
+43:9&emsp;Smooth Sandstone Slab (Double) 
+44&emsp;Stone Slab 
+44:1&emsp;Sandstone Slab 
+44:2&emsp;Wooden Slab 
+44:3&emsp;Cobblestone Slab 
+44:4&emsp;Brick Slab 
+44:5&emsp;Stone Brick Slab 
+44:6&emsp;Nether Brick Slab 
+44:7&emsp;Quartz Slab 
+45&emsp;Brick 
+46&emsp;TNT 
+47&emsp;Bookshelf 
+48&emsp;Moss Stone 
+49&emsp;Obsidian 
+50&emsp;Torch 
+51&emsp;Fire 
+52&emsp;Mob Spawner 
+53&emsp;Wooden Stairs (Oak) 
+54&emsp;Chest 
+55&emsp;Redstone Wire 
+56&emsp;Diamond Ore 
+57&emsp;Block of Diamond 
+58&emsp;Workbench 
+59&emsp;Wheat (Crop) 
+60&emsp;Farmland 
+61&emsp;Furnace 
+62&emsp;Furnace (Smelting) 
+63&emsp;Sign (Block) 
+64&emsp;Wood Door (Block) 
+65&emsp;Ladder 
+66&emsp;Rail 
+67&emsp;Cobblestone Stairs 
+68&emsp;Sign (Wall Block) 
+69&emsp;Lever 
+70&emsp;Stone Pressure Plate 
+71&emsp;Iron Door (Block) 
+72&emsp;Wooden Pressure Plate 
+73&emsp;Redstone Ore 
+74&emsp;Redstone Ore (Glowing) 
+75&emsp;Redstone Torch (Off) 
+76&emsp;Redstone Torch 
+77&emsp;Button (Stone) 
+78&emsp;Snow 
+79&emsp;Ice 
+80&emsp;Snow Block 
+81&emsp;Cactus 
+82&emsp;Clay Block 
+83&emsp;Sugar Cane (Block) 
+84&emsp;Jukebox 
+85&emsp;Fence (Oak) 
+86&emsp;Pumpkin 
+87&emsp;Netherrack 
+88&emsp;Soul Sand 
+89&emsp;Glowstone 
+90&emsp;Portal 
+91&emsp;Jack-O-Lantern 
+92&emsp;Cake (Block) 
+93&emsp;Redstone Repeater (Block Off) 
+94&emsp;Redstone Repeater (Block On) 
+95&emsp;Stained Glass (White) 
+95:1&emsp;Stained Glass (Orange) 
+95:2&emsp;Stained Glass (Magenta) 
+95:3&emsp;Stained Glass (Light Blue) 
+95:4&emsp;Stained Glass (Yellow) 
+95:5&emsp;Stained Glass (Lime) 
+95:6&emsp;Stained Glass (Pink) 
+95:7&emsp;Stained Glass (Gray) 
+95:8&emsp;Stained Glass (Light Grey) 
+95:9&emsp;Stained Glass (Cyan) 
+95:10&emsp;Stained Glass (Purple) 
+95:11&emsp;Stained Glass (Blue) 
+95:12&emsp;Stained Glass (Brown) 
+95:13&emsp;Stained Glass (Green) 
+95:14&emsp;Stained Glass (Red) 
+95:15&emsp;Stained Glass (Black) 
+96&emsp;Trapdoor 
+97&emsp;Monster Egg (Stone) 
+97:1&emsp;Monster Egg (Cobblestone) 
+97:2&emsp;Monster Egg (Stone Brick) 
+97:3&emsp;Monster Egg (Mossy Stone Brick) 
+97:4&emsp;Monster Egg (Cracked Stone) 
+97:5&emsp;Monster Egg (Chiseled Stone) 
+98&emsp;Stone Bricks 
+98:1&emsp;Mossy Stone Bricks 
+98:2&emsp;Cracked Stone Bricks 
+98:3&emsp;Chiseled Stone Brick 
+99&emsp;Brown Mushroom (Block) 
+100&emsp;Red Mushroom (Block) 
+101&emsp;Iron Bars 
+102&emsp;Glass Pane 
+103&emsp;Melon (Block) 
+104&emsp;Pumpkin Vine 
+105&emsp;Melon Vine 
+106&emsp;Vines 
+107&emsp;Fence Gate (Oak) 
+108&emsp;Brick Stairs 
+109&emsp;Stone Brick Stairs 
+110&emsp;Mycelium 
+111&emsp;Lily Pad 
+112&emsp;Nether Brick 
+113&emsp;Nether Brick Fence 
+114&emsp;Nether Brick Stairs 
+115&emsp;Nether Wart 
+116&emsp;Enchantment Table 
+117&emsp;Brewing Stand (Block) 
+118&emsp;Cauldron (Block) 
+119&emsp;End Portal 
+120&emsp;End Portal Frame 
+121&emsp;End Stone 
+122&emsp;Dragon Egg 
+123&emsp;Redstone Lamp 
+124&emsp;Redstone Lamp (On) 
+125&emsp;Oak-Wood Slab (Double) 
+125:1&emsp;Spruce-Wood Slab (Double) 
+125:2&emsp;Birch-Wood Slab (Double) 
+125:3&emsp;Jungle-Wood Slab (Double) 
+125:4&emsp;Acacia Wood Slab (Double) 
+125:5&emsp;Dark Oak Wood Slab (Double) 
+126&emsp;Oak-Wood Slab 
+126:1&emsp;Spruce-Wood Slab 
+126:2&emsp;Birch-Wood Slab 
+126:3&emsp;Jungle-Wood Slab 
+126:4&emsp;Acacia Wood Slab 
+126:5&emsp;Dark Oak Wood Slab 
+127&emsp;Cocoa Plant 
+128&emsp;Sandstone Stairs 
+129&emsp;Emerald Ore 
+130&emsp;Ender Chest 
+131&emsp;Tripwire Hook 
+132&emsp;Tripwire 
+133&emsp;Block of Emerald 
+134&emsp;Wooden Stairs (Spruce) 
+135&emsp;Wooden Stairs (Birch) 
+136&emsp;Wooden Stairs (Jungle) 
+137&emsp;Command Block 
+138&emsp;Beacon 
+139&emsp;Cobblestone Wall 
+139:1&emsp;Mossy Cobblestone Wall 
+140&emsp;Flower Pot (Block) 
+141&emsp;Carrot (Crop) 
+142&emsp;Potatoes (Crop) 
+143&emsp;Button (Wood) 
+144&emsp;Head Block (Skeleton) 
+144:1&emsp;Head Block (Wither) 
+144:2&emsp;Head Block (Zombie) 
+144:3&emsp;Head Block (Steve) 
+144:4&emsp;Head Block (Creeper) 
+145&emsp;Anvil 
+145:1&emsp;Anvil (Slightly Damaged) 
+145:2&emsp;Anvil (Very Damaged) 
+146&emsp;Trapped Chest 
+147&emsp;Weighted Pressure Plate (Light) 
+148&emsp;Weighted Pressure Plate (Heavy) 
+149&emsp;Redstone Comparator (Off) 
+150&emsp;Redstone Comparator (On) 
+151&emsp;Daylight Sensor 
+152&emsp;Block of Redstone 
+153&emsp;Nether Quartz Ore 
+154&emsp;Hopper 
+155&emsp;Quartz Block 
+155:1&emsp;Chiseled Quartz Block 
+155:2&emsp;Pillar Quartz Block 
+156&emsp;Quartz Stairs 
+157&emsp;Rail (Activator) 
+158&emsp;Dropper 
+159&emsp;Stained Clay (White) 
+159:1&emsp;Stained Clay (Orange) 
+159:2&emsp;Stained Clay (Magenta) 
+159:3&emsp;Stained Clay (Light Blue) 
+159:4&emsp;Stained Clay (Yellow) 
+159:5&emsp;Stained Clay (Lime) 
+159:6&emsp;Stained Clay (Pink) 
+159:7&emsp;Stained Clay (Gray) 
+159:8&emsp;Stained Clay (Light Gray) 
+159:9&emsp;Stained Clay (Cyan) 
+159:10&emsp;Stained Clay (Purple) 
+159:11&emsp;Stained Clay (Blue) 
+159:12&emsp;Stained Clay (Brown) 
+159:13&emsp;Stained Clay (Green) 
+159:14&emsp;Stained Clay (Red) 
+159:15&emsp;Stained Clay (Black) 
+160&emsp;Stained Glass Pane (White) 
+160:1&emsp;Stained Glass Pane (Orange) 
+160:2&emsp;Stained Glass Pane (Magenta) 
+160:3&emsp;Stained Glass Pane (Light Blue) 
+160:4&emsp;Stained Glass Pane (Yellow) 
+160:5&emsp;Stained Glass Pane (Lime) 
+160:6&emsp;Stained Glass Pane (Pink) 
+160:7&emsp;Stained Glass Pane (Gray) 
+160:8&emsp;Stained Glass Pane (Light Gray) 
+160:9&emsp;Stained Glass Pane (Cyan) 
+160:10&emsp;Stained Glass Pane (Purple) 
+160:11&emsp;Stained Glass Pane (Blue) 
+160:12&emsp;Stained Glass Pane (Brown) 
+160:13&emsp;Stained Glass Pane (Green) 
+160:14&emsp;Stained Glass Pane (Red) 
+160:15&emsp;Stained Glass Pane (Black) 
+161&emsp;Leaves (Acacia) 
+161:1&emsp;Leaves (Dark Oak) 
+162&emsp;Wood (Acacia Oak) 
+162:1&emsp;Wood (Dark Oak) 
+163&emsp;Wooden Stairs (Acacia) 
+164&emsp;Wooden Stairs (Dark Oak) 
+165&emsp;Slime Block 
+166&emsp;Barrier 
+167&emsp;Iron Trapdoor 
+168&emsp;Prismarine 
+168:1&emsp;Prismarine Bricks 
+168:2&emsp;Dark Prismarine 
+169&emsp;Sea Lantern 
+170&emsp;Hay Bale 
+171&emsp;Carpet (White) 
+171:1&emsp;Carpet (Orange) 
+171:2&emsp;Carpet (Magenta) 
+171:3&emsp;Carpet (Light Blue) 
+171:4&emsp;Carpet (Yellow) 
+171:5&emsp;Carpet (Lime) 
+171:6&emsp;Carpet (Pink) 
+171:7&emsp;Carpet (Grey) 
+171:8&emsp;Carpet (Light Gray) 
+171:9&emsp;Carpet (Cyan) 
+171:10&emsp;Carpet (Purple) 
+171:11&emsp;Carpet (Blue) 
+171:12&emsp;Carpet (Brown) 
+171:13&emsp;Carpet (Green) 
+171:14&emsp;Carpet (Red) 
+171:15&emsp;Carpet (Black) 
+172&emsp;Hardened Clay 
+173&emsp;Block of Coal 
+174&emsp;Packed Ice 
+175&emsp;Sunflower 
+175:1&emsp;Lilac 
+175:2&emsp;Double Tallgrass 
+175:3&emsp;Large Fern 
+175:4&emsp;Rose Bush 
+175:5&emsp;Peony 
+176&emsp;Standing Banner (Block) 
+177&emsp;Wall Banner (Block) 
+178&emsp;Inverted Daylight Sensor 
+179&emsp;Red Sandstone 
+179:1&emsp;Red Sandstone (Chiseled) 
+179:2&emsp;Red Sandstone (Smooth) 
+180&emsp;Red Sandstone Stairs 
+181&emsp;Red Sandstone Slab (Double) 
+182&emsp;Red Sandstone Slab 
+183&emsp;Fence Gate (Spruce) 
+184&emsp;Fence Gate (Birch) 
+185&emsp;Fence Gate (Jungle) 
+186&emsp;Fence Gate (Dark Oak) 
+187&emsp;Fence Gate (Acacia) 
+188&emsp;Fence (Spruce) 
+189&emsp;Fence (Birch) 
+190&emsp;Fence (Jungle) 
+191&emsp;Fence (Dark Oak) 
+192&emsp;Fence (Acacia) 
+193&emsp;Wooden Door Block (Spruce) 
+194&emsp;Wooden Door Block (Birch) 
+195&emsp;Wooden Door Block (Jungle) 
+196&emsp;Wooden Door Block (Acacia) 
+197&emsp;Wooden Door Block (Dark Oak) 
+256&emsp;Iron Shovel 
+257&emsp;Iron Pickaxe 
+258&emsp;Iron Axe 
+259&emsp;Flint and Steel 
+260&emsp;Apple 
+261&emsp;Bow 
+262&emsp;Arrow 
+263&emsp;Coal 
+263:1&emsp;Charcoal 
+264&emsp;Diamond Gem 
+265&emsp;Iron Ingot 
+266&emsp;Gold Ingot 
+267&emsp;Iron Sword 
+268&emsp;Wooden Sword 
+269&emsp;Wooden Shovel 
+270&emsp;Wooden Pickaxe 
+271&emsp;Wooden Axe 
+272&emsp;Stone Sword 
+273&emsp;Stone Shovel 
+274&emsp;Stone Pickaxe 
+275&emsp;Stone Axe 
+276&emsp;Diamond Sword 
+277&emsp;Diamond Shovel 
+278&emsp;Diamond Pickaxe 
+279&emsp;Diamond Axe 
+280&emsp;Stick 
+281&emsp;Bowl 
+282&emsp;Mushroom Stew 
+283&emsp;Gold Sword 
+284&emsp;Gold Shovel 
+285&emsp;Gold Pickaxe 
+286&emsp;Gold Axe 
+287&emsp;String 
+288&emsp;Feather 
+289&emsp;Gunpowder 
+290&emsp;Wooden Hoe 
+291&emsp;Stone Hoe 
+292&emsp;Iron Hoe 
+293&emsp;Diamond Hoe 
+294&emsp;Gold Hoe 
+295&emsp;Wheat Seeds 
+296&emsp;Wheat 
+297&emsp;Bread 
+298&emsp;Leather Helmet 
+299&emsp;Leather Chestplate 
+300&emsp;Leather Leggings 
+301&emsp;Leather Boots 
+302&emsp;Chainmail Helmet 
+303&emsp;Chainmail Chestplate 
+304&emsp;Chainmail Leggings 
+305&emsp;Chainmail Boots 
+306&emsp;Iron Helmet 
+307&emsp;Iron Chestplate 
+308&emsp;Iron Leggings 
+309&emsp;Iron Boots 
+310&emsp;Diamond Helmet 
+311&emsp;Diamond Chestplate 
+312&emsp;Diamond Leggings 
+313&emsp;Diamond Boots 
+314&emsp;Gold Helmet 
+315&emsp;Gold Chestplate 
+316&emsp;Gold Leggings 
+317&emsp;Gold Boots 
+318&emsp;Flint 
+319&emsp;Raw Porkchop 
+320&emsp;Cooked Porkchop 
+321&emsp;Painting 
+322&emsp;Golden Apple 
+322:1&emsp;Enchanted Golden Apple 
+323&emsp;Sign 
+324&emsp;Wooden Door 
+325&emsp;Bucket 
+326&emsp;Bucket (Water) 
+327&emsp;Bucket (Lava) 
+328&emsp;Minecart 
+329&emsp;Saddle 
+330&emsp;Iron Door 
+331&emsp;Redstone Dust 
+332&emsp;Snowball 
+333&emsp;Boat 
+334&emsp;Leather 
+335&emsp;Bucket (Milk) 
+336&emsp;Clay Brick 
+337&emsp;Clay 
+338&emsp;Sugar Cane 
+339&emsp;Paper 
+340&emsp;Book 
+341&emsp;Slime Ball 
+342&emsp;Minecart (Storage) 
+343&emsp;Minecart (Powered) 
+344&emsp;Egg 
+345&emsp;Compass 
+346&emsp;Fishing Rod 
+347&emsp;Watch 
+348&emsp;Glowstone Dust 
+349&emsp;Raw Fish 
+349:1&emsp;Raw Salmon 
+349:2&emsp;Clownfish 
+349:3&emsp;Pufferfish 
+350&emsp;Cooked Fish 
+350:1&emsp;Cooked Salmon 
+350:2&emsp;Clownfish 
+350:3&emsp;Pufferfish 
+351&emsp;Ink Sack 
+351:1&emsp;Rose Red Dye 
+351:2&emsp;Cactus Green Dye 
+351:3&emsp;Cocoa Bean 
+351:4&emsp;Lapis Lazuli 
+351:5&emsp;Purple Dye 
+351:6&emsp;Cyan Dye 
+351:7&emsp;Light Gray Dye 
+351:8&emsp;Gray Dye 
+351:9&emsp;Pink Dye 
+351:10&emsp;Lime Dye 
+351:11&emsp;Dandelion Yellow Dye 
+351:12&emsp;Light Blue Dye 
+351:13&emsp;Magenta Dye 
+351:14&emsp;Orange Dye 
+351:15&emsp;Bone Meal 
+352&emsp;Bone 
+353&emsp;Sugar 
+354&emsp;Cake 
+355&emsp;Bed 
+356&emsp;Redstone Repeater 
+357&emsp;Cookie 
+358&emsp;Map 
+359&emsp;Shears 
+360&emsp;Melon (Slice) 
+361&emsp;Pumpkin Seeds 
+362&emsp;Melon Seeds 
+363&emsp;Raw Beef 
+364&emsp;Steak 
+365&emsp;Raw Chicken 
+366&emsp;Cooked Chicken 
+367&emsp;Rotten Flesh 
+368&emsp;Ender Pearl 
+369&emsp;Blaze Rod 
+370&emsp;Ghast Tear 
+371&emsp;Gold Nugget 
+372&emsp;Nether Wart Seeds 
+373&emsp;Water Bottle 
+373:16&emsp;Awkward Potion 
+373:32&emsp;Thick Potion 
+373:64&emsp;Mundane Potion 
+373:8193&emsp;Regeneration Potion (0:45) 
+373:8194&emsp;Swiftness Potion (3:00) 
+373:8195&emsp;Fire Resistance Potion (3:00) 
+373:8196&emsp;Poison Potion (0:45) 
+373:8197&emsp;Healing Potion 
+373:8198&emsp;Night Vision Potion (3:00) 
+373:8200&emsp;Weakness Potion (1:30) 
+373:8201&emsp;Strength Potion (3:00) 
+373:8202&emsp;Slowness Potion (1:30) 
+373:8204&emsp;Harming Potion 
+373:8205&emsp;Water Breathing Potion (3:00) 
+373:8206&emsp;Invisibility Potion (3:00) 
+373:8225&emsp;Regeneration Potion II (0:22) 
+373:8226&emsp;Swiftness Potion II (1:30) 
+373:8228&emsp;Poison Potion II (0:22) 
+373:8229&emsp;Healing Potion II 
+373:8233&emsp;Strength Potion II (1:30) 
+373:8235&emsp;Leaping Potion II (1:30) 
+373:8236&emsp;Harming Potion II 
+373:8257&emsp;Regeneration Potion (2:00) 
+373:8258&emsp;Swiftness Potion (8:00) 
+373:8259&emsp;Fire Resistance Potion (8:00) 
+373:8260&emsp;Poison Potion (2:00) 
+373:8262&emsp;Night Vision Potion (8:00) 
+373:8264&emsp;Weakness Potion (4:00) 
+373:8265&emsp;Strength Potion (8:00) 
+373:8266&emsp;Slowness Potion (4:00) 
+373:8267&emsp;Leaping Potion (3:00) 
+373:8269&emsp;Water Breathing Potion (8:00) 
+373:8270&emsp;Invisibility Potion (8:00) 
+373:8289&emsp;Regeneration Potion II (1:00) 
+373:8290&emsp;Swiftness Potion II (4:00) 
+373:8292&emsp;Poison Potion II (1:00) 
+373:8297&emsp;Strength Potion II (4:00) 
+373:16385&emsp;Regeneration Splash (0:33) 
+373:16386&emsp;Swiftness Splash (2:15) 
+373:16387&emsp;Fire Resistance Splash (2:15) 
+373:16388&emsp;Poison Splash (0:33) 
+373:16389&emsp;Healing Splash 
+373:16390&emsp;Night Vision Splash (2:15) 
+373:16392&emsp;Weakness Splash (1:07) 
+373:16393&emsp;Strength Splash (2:15) 
+373:16394&emsp;Slowness Splash (1:07) 
+373:16396&emsp;Harming Splash 
+373:16397&emsp;Breathing Splash (2:15) 
+373:16398&emsp;Invisibility Splash (2:15) 
+373:16417&emsp;Regeneration Splash II (0:16) 
+373:16418&emsp;Swiftness Splash II (1:07) 
+373:16420&emsp;Poison Splash II (0:16) 
+373:16421&emsp;Healing Splash II 
+373:16425&emsp;Strength Splash II (1:07) 
+373:16427&emsp;Leaping Splash II (1:07) 
+373:16428&emsp;Harming Splash II 
+373:16449&emsp;Regeneration Splash (1:30) 
+373:16450&emsp;Swiftness Splash (6:00) 
+373:16451&emsp;Fire Resistance Splash (6:00) 
+373:16452&emsp;Poison Splash (1:30) 
+373:16454&emsp;Night Vision Splash (6:00) 
+373:16456&emsp;Weakness Splash (3:00) 
+373:16457&emsp;Strength Splash (6:00) 
+373:16458&emsp;Slowness Splash (3:00) 
+373:16459&emsp;Leaping Splash (2:15) 
+373:16461&emsp;Breathing Splash (6:00) 
+373:16462&emsp;Invisibility Splash (6:00) 
+373:16481&emsp;Regeneration Splash II (0:45) 
+373:16482&emsp;Swiftness Splash II (3:00) 
+373:16484&emsp;Poison Splash II (0:45) 
+373:16489&emsp;Strength Splash II (3:00) 
+374&emsp;Glass Bottle 
+375&emsp;Spider Eye 
+376&emsp;Fermented Spider Eye 
+377&emsp;Blaze Powder 
+378&emsp;Magma Cream 
+379&emsp;Brewing Stand 
+380&emsp;Cauldron 
+381&emsp;Eye of Ender 
+382&emsp;Glistering Melon (Slice) 
+383:50&emsp;Spawn Egg (Creeper) 
+383:51&emsp;Spawn Egg (Skeleton) 
+383:52&emsp;Spawn Egg (Spider) 
+383:54&emsp;Spawn Egg (Zombie) 
+383:55&emsp;Spawn Egg (Slime) 
+383:56&emsp;Spawn Egg (Ghast) 
+383:57&emsp;Spawn Egg (Zombie Pigmen) 
+383:58&emsp;Spawn Egg (Endermen) 
+383:59&emsp;Spawn Egg (Cave Spider) 
+383:60&emsp;Spawn Egg (Silverfish) 
+383:61&emsp;Spawn Egg (Blaze) 
+383:62&emsp;Spawn Egg (Magma Cube) 
+383:65&emsp;Spawn Egg (Bat) 
+383:66&emsp;Spawn Egg (Witch) 
+383:67&emsp;Spawn Egg (Endermite) 
+383:68&emsp;Spawn Egg (Guardian) 
+383:90&emsp;Spawn Egg (Pig) 
+383:91&emsp;Spawn Egg (Sheep) 
+383:92&emsp;Spawn Egg (Cow) 
+383:93&emsp;Spawn Egg (Chicken) 
+383:94&emsp;Spawn Egg (Squid) 
+383:95&emsp;Spawn Egg (Wolf) 
+383:96&emsp;Spawn Egg (Mooshroom) 
+383:98&emsp;Spawn Egg (Ocelot) 
+383:100&emsp;Spawn Egg (Horse) 
+383:101&emsp;Spawn Egg (Rabbit) 
+383:120&emsp;Spawn Egg (Villager) 
+384&emsp;Bottle of Enchanting 
+385&emsp;Fire Charge 
+386&emsp;Book and Quill 
+387&emsp;Written Book 
+388&emsp;Emerald 
+389&emsp;Item Frame 
+390&emsp;Flower Pot 
+391&emsp;Carrot 
+392&emsp;Potato 
+393&emsp;Baked Potato 
+394&emsp;Poisonous Potato 
+395&emsp;Empty Map 
+396&emsp;Golden Carrot 
+397&emsp;Head (Skeleton) 
+397:1&emsp;Head (Wither) 
+397:2&emsp;Head (Zombie) 
+397:3&emsp;Head (Steve) 
+397:4&emsp;Head (Creeper) 
+398&emsp;Carrot on a Stick 
+399&emsp;Nether Star 
+400&emsp;Pumpkin Pie 
+401&emsp;Firework Rocket 
+402&emsp;Firework Star 
+403&emsp;Enchanted Book 
+404&emsp;Redstone Comparator 
+405&emsp;Nether Brick (Item) 
+406&emsp;Nether Quartz 
+407&emsp;Minecart (TNT) 
+408&emsp;Minecart (Hopper) 
+409&emsp;Prismarine Shard 
+410&emsp;Prismarine Crystals 
+411&emsp;Raw Rabbit 
+412&emsp;Cooked Rabbit 
+413&emsp;Rabbit Stew 
+414&emsp;Rabbit's Foot 
+415&emsp;Rabbit Hide 
+416&emsp;Armor Stand 
+417&emsp;Iron Horse Armor 
+418&emsp;Gold Horse Armor 
+419&emsp;Diamond Horse Armor 
+420&emsp;Lead 
+421&emsp;Name Tag 
+422&emsp;Minecart (Command Block) 
+423&emsp;Raw Mutton 
+424&emsp;Cooked Mutton 
+425&emsp;Banner (Black) 
+425:1&emsp;Banner (Red) 
+425:2&emsp;Banner (Green) 
+425:3&emsp;Banner (Brown) 
+425:4&emsp;Banner (Blue) 
+425:5&emsp;Banner (Purple) 
+425:6&emsp;Banner (Cyan) 
+425:7&emsp;Banner (Light Gray) 
+425:8&emsp;Banner (Gray) 
+425:9&emsp;Banner (Pink) 
+425:10&emsp;Banner (Lime) 
+425:11&emsp;Banner (Yellow) 
+425:12&emsp;Banner (Light Blue) 
+425:13&emsp;Banner (Magenta) 
+425:14&emsp;Banner (Orange) 
+425:15&emsp;Banner (White) 
+427&emsp;Wooden Door (Spruce) 
+428&emsp;Wooden Door (Birch) 
+429&emsp;Wooden Door (Jungle) 
+430&emsp;Wooden Door (Acacia) 
+431&emsp;Wooden Door (Dark Oak) 
+2256&emsp;Music Disk (13) 
+2257&emsp;Music Disk (Cat) 
+2258&emsp;Music Disk (Blocks) 
+2259&emsp;Music Disk (Chirp) 
+2260&emsp;Music Disk (Far) 
+2261&emsp;Music Disk (Mall) 
+2262&emsp;Music Disk (Mellohi) 
+2263&emsp;Music Disk (Stal) 
+2264&emsp;Music Disk (Strad) 
+2265&emsp;Music Disk (Ward) 
+2266&emsp;Music Disk (11) 
+2267&emsp;Music Disk (Wait)

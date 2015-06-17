@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>MineTool</title>
+	<title>Minecraft PowerTool | Glass Arcadia</title>
 
 	<!-- scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -9,7 +9,7 @@
 	<script>$j = jQuery.noConflict(true)</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.2/mootools.js"></script>
 	<script src="js/circle.js"></script>
-	<script type="text/javascript">
+	<script type="text/javascript"> <!-- Ping server -->
 		// TODO use ajax to call (shouldn't have to reload page)
 		function ping()
 		{
@@ -21,18 +21,15 @@
 			window.location.href = "tool.php?ping=true&server=" + document.getElementById("server").value + "&port=" + document.getElementById("port").value;
 		}
 	</script>
-	<script type="text/javascript">
-	function OnChange() {
-		
-	}
-	</script>
-	<script type="text/javascript">
-	var $products = $j('#products li');
-	$j('#filter').keyup(function() {
-		var re = new RegExp($j(this).val(), "i"); // "i" means it's case-insensitive
-		$products.show().filter(function() {
-			return !re.test($(this).text());
-		}).hide();
+	<script type="text/javascript"> <!-- Filter List code -->
+	$j(document).ready(function() {
+		$j('#filter').keyup(function() {
+				var re = new RegExp($j('#filter').val(), "i");
+				$j('#list').children().each( function(i) {
+					var toHide = !re.test($j(this).text());
+					(toHide) ? $j(this).hide() : $j(this).show();
+				});
+		});
 	});
 	</script>
 	<?php
@@ -61,13 +58,10 @@
 	}
 	?>
 	
-
 	<!-- styles -->
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/tab-content.css">
-	<link rel="stylesheet" href="css/circle.css">
-	<link rel="stylesheet" href="css/noscroll.css">
+	<link rel="stylesheet" href="css/arcadia.css">
 </head>
 
 <body>
@@ -87,12 +81,12 @@
 				Server Address: <input type="text" id="server" value=<?php echo $_GET['server']; ?>> <br>
 				Port Number:&nbsp&nbsp&nbsp <input type="number" id="port" min="1" max="99999" value=<?php echo $_GET['port']; ?>> <br>
 				<button type="button" id="ping" onclick="ping()">Ping</button>
-				<button type="button" id="ping" onclick=window.location.href="tool.php?ping=true&server=23.95.29.207&port=25565">Glass Arcadia</button>
+				<button type="button" id="ga" onclick=window.location.href="?ping=true&server=23.95.29.207&port=25565">Glass Arcadia</button>
 				<!-- DEBUG <a href="tool.php">return</a> -->
 				<br /><br />
 				<div class="row">
 					<div class="col-md-8">
-						<h4><b>General Information</b></h4>
+						<h4>General Information</h4>
 						<table class="table table-striped">
 							<tbody>
 								<tr>
@@ -126,17 +120,18 @@
 							</tbody>
 						</table>
 					</div>
-					<div class="col-md-8" style="font-size:0px;">
-						<h4><b>Players</b></h4>
+					<div class="col-md-8" style="font-size:10px;">
+						<h4>Players</h4>
 						<?php
 						$url = "https://cravatar.eu/helmavatar/";
 						if(empty($query['error'])) {
-							if($playerlist != "null") {
+							if($playerlist != "null" && !empty($playerlist) ) {
 								$shown = "0";
 								foreach ($playerlist as $player) {
 									$shown++;
 								?>
 									<a data-placement="top" rel="tooltip" style="display: inline-block;" title="<?php echo $player;?>">
+									<?php echo $player;?><br />
 									<img src="<?php echo $url.$player;?>/50" size="40" width="40" height="40" style="width: 40px; height: 40px; margin-bottom: 5px; margin-right: 5px; border-radius: 3px; "/></a>
 							<?php
 								}
@@ -163,6 +158,7 @@
 			</div>
 			<div class="tab-pane" id="guides">
 				<!-- Guides -->
+				<!--
 				<select id="guidelist" onchange="OnChange()">
 					<option selected="selected">Block IDs</option>
 					<option>Food</option>
@@ -178,18 +174,28 @@
 					var e = document.getElementById("ddlViewBy");
 					var indexValue = e.options[e.selectedIndex].value; // value=2
 					var stringValue = e.options[e.selectedIndex].text; // value="test2"
-					-->
+					-- >
 				</select>
-				
-				<ul id="products">
-					<li>Apple</li>
-					<li>Banana</li>
-					<li>Mango</li>
-				</ul>
-				<input id="filter" >
-				
 				<br /><br />
-				<div id="guidepanel"></div>
+				-->
+				<div name="blockID" id="blockID">
+					<h4>Block IDs</h4>
+					<input id="filter" >
+					<ul id="list">
+						<?php
+							$blockfile = fopen("blocks.txt", "r");
+							if ($blockfile)
+							{
+								while (($buffer = fgets( $blockfile, filesize("blocks.txt") )) !== false)
+								{
+									echo "<li>" . $buffer . "</li>\r\n";
+								}
+							}
+							fclose( $blockfile );
+						?>
+
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>

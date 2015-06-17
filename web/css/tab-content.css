@@ -1,9 +1,0 @@
-.tab-content {
-  padding: 10px;
-  > .tab-pane {
-    display: none;
-  }
-  > .active {
-    display: block;
-  }
-}
