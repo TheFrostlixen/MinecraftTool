@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Minecraft PowerTool | Glass Arcadia</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 
 	<!-- scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -9,7 +10,7 @@
 	<script>$j = jQuery.noConflict(true)</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.2/mootools.js"></script>
 	<script src="js/circle.js"></script>
-	<script type="text/javascript"> <!-- Ping server -->
+	<script type="text/javascript"> <!-- Ping server (TODO implement AJAX) -->
 		// TODO use ajax to call (shouldn't have to reload page)
 		function ping()
 		{
@@ -18,7 +19,7 @@
 				//alert('complete, returned:' + data); //returns webpage in html...
 			} });
 		*/
-			window.location.href = "tool.php?ping=true&server=" + document.getElementById("server").value + "&port=" + document.getElementById("port").value;
+			window.location.href = "?ping=true&server=" + document.getElementById("server").value + "&port=" + document.getElementById("port").value;
 		}
 	</script>
 	<script type="text/javascript"> <!-- Filter List code -->
@@ -31,6 +32,11 @@
 				});
 		});
 	});
+	</script>
+	<script type="text/javascript"> <!-- Guide Listbox OnChange code -->
+	function OnSelectChange(data) {
+		document.getElementById("imgGuide").src = "../images/" + data + ".jpg";
+	}
 	</script>
 	<?php
 	// TODO update HTML elements asynch when called
@@ -158,44 +164,43 @@
 			</div>
 			<div class="tab-pane" id="guides">
 				<!-- Guides -->
-				<!--
-				<select id="guidelist" onchange="OnChange()">
-					<option selected="selected">Block IDs</option>
-					<option>Food</option>
-					<option>Potions</option>
-					<option>Redstone</option>
-					<!-- EXAMPLE SELECTION
-					<select id="ddlViewBy">
-					<option value="1">test1</option>
-					<option value="2" selected="selected">test2</option>
-					<option value="3">test3</option>
-					</select>
-					
-					var e = document.getElementById("ddlViewBy");
-					var indexValue = e.options[e.selectedIndex].value; // value=2
-					var stringValue = e.options[e.selectedIndex].text; // value="test2"
-					-- >
-				</select>
-				<br /><br />
-				-->
-				<div name="blockID" id="blockID">
-					<h4>Block IDs</h4>
-					<input id="filter" >
-					<ul id="list">
-						<?php
-							$blockfile = fopen("blocks.txt", "r");
-							if ($blockfile)
-							{
-								while (($buffer = fgets( $blockfile, filesize("blocks.txt") )) !== false)
-								{
-									echo "<li>" . $buffer . "</li>\r\n";
-								}
-							}
-							fclose( $blockfile );
-						?>
-
-					</ul>
-				</div>
+				<table border="0" cellpadding="0" cellspacing="0" width="900">
+					<tr>
+						<td valign="left" width="500"> <!-- Block ID filter list -->
+							<div name="blockID" id="blockID" class="col-md-8">
+								<h4>Block IDs</h4>
+								<input id="filter" >
+								<ul id="list">
+									<?php
+										$blockfile = fopen("blocks.txt", "r");
+										if ($blockfile)
+										{
+											while (($buffer = fgets( $blockfile, filesize("blocks.txt") )) !== false)
+											{
+												echo "<li>" . $buffer . "</li>\r\n";
+											}
+										}
+										fclose( $blockfile );
+									?>
+								</ul>
+							</div>
+						</td>
+						<td valign="top" width="750" nowrap> <!-- Other stuff under guides -->
+							<div class="col-md-8">
+								<h4>Block fdsas</h4>
+								<p>more text stuff!</p>
+								<select id="guidelist" onchange="OnSelectChange(this.value)">
+									<option selected="selected" disabled="disabled">Block IDs</option>
+									<option>car1</option>
+									<option>car2</option>
+									<option>backlot</option>
+								</select>
+								<br /><br />
+								<img id="imgGuide">
+							</div>
+						</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</div>
