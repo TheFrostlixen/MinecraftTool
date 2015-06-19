@@ -35,7 +35,16 @@
 	</script>
 	<script type="text/javascript"> <!-- Guide Listbox OnChange code -->
 	function OnSelectChange(data) {
-		document.getElementById("imgGuide").src = "../images/" + data + ".jpg";
+		var imgpath = "img/";
+		if (data=="Car") {
+			imgpath += "dtk1.png";
+		} else if (data=="Sideview") {
+			imgpath += "dtk2.png";
+		} else if (data=="blankerino") {
+			imgpath = "";
+		}
+		
+		document.getElementById("imgGuide").src = imgpath;
 	}
 	</script>
 	<?php
@@ -164,10 +173,10 @@
 			</div>
 			<div class="tab-pane" id="guides">
 				<!-- Guides -->
-				<table border="0" cellpadding="0" cellspacing="0" width="900">
+				<table border="0" cellpadding="0" cellspacing="0" >
 					<tr>
-						<td valign="left" width="500"> <!-- Block ID filter list -->
-							<div name="blockID" id="blockID" class="col-md-8">
+						<td valign="left" width="400"> <!-- Block ID filter list -->
+							<div name="blockID" id="blockID" class="col-md-16">
 								<h4>Block IDs</h4>
 								<input id="filter" >
 								<ul id="list">
@@ -185,15 +194,15 @@
 								</ul>
 							</div>
 						</td>
-						<td valign="top" width="750" nowrap> <!-- Other stuff under guides -->
+						<td valign="top"  width="750" nowrap> <!-- Other stuff under guides -->
 							<div class="col-md-8">
-								<h4>Block fdsas</h4>
+								<h4>More useful info</h4>
 								<p>more text stuff!</p>
 								<select id="guidelist" onchange="OnSelectChange(this.value)">
-									<option selected="selected" disabled="disabled">Block IDs</option>
-									<option>car1</option>
-									<option>car2</option>
-									<option>backlot</option>
+									<option selected="selected" disabled="disabled">SELECT</option>
+									<option>Car</option>
+									<option>Sideview</option>
+									<option>blankerino</option>
 								</select>
 								<br /><br />
 								<img id="imgGuide">
