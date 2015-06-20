@@ -36,15 +36,20 @@
 	<script type="text/javascript"> <!-- Guide Listbox OnChange code -->
 	function OnSelectChange(data) {
 		var imgpath = "img/";
-		if (data=="Car") {
-			imgpath += "dtk1.png";
-		} else if (data=="Sideview") {
-			imgpath += "dtk2.png";
+		
+		if (data=="Food") {
+			imgpath += "food.jpg";
+		} else if (data=="Brewing") {
+			imgpath += "brewing.jpg";
+		} else if (data=="Redstone") {
+			imgpath += "redstone.jpg";
 		} else if (data=="blankerino") {
 			imgpath = "";
 		}
 		
-		document.getElementById("imgGuide").src = imgpath;
+		var el = document.getElementById("imgGuide");
+		el.src = imgpath;
+		if (imgpath == "") { el.style.display = 'none'; } else { el.style.display = 'block'; }
 	}
 	</script>
 	<?php
@@ -194,14 +199,15 @@
 								</ul>
 							</div>
 						</td>
-						<td valign="top"  width="750" nowrap> <!-- Other stuff under guides -->
+						<td valign="top"  width="450" nowrap> <!-- Guides and infographics -->
 							<div class="col-md-8">
-								<h4>More useful info</h4>
-								<p>more text stuff!</p>
+								<h4>Infographics</h4>
+								<p id="infotext"></p>
 								<select id="guidelist" onchange="OnSelectChange(this.value)">
-									<option selected="selected" disabled="disabled">SELECT</option>
-									<option>Car</option>
-									<option>Sideview</option>
+									<option selected="selected" disabled="disabled">===</option>
+									<option>Food</option>
+									<option>Brewing</option>
+									<option>Redstone</option>
 									<option>blankerino</option>
 								</select>
 								<br /><br />
@@ -215,21 +221,3 @@
 	</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
