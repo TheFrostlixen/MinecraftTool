@@ -10,6 +10,7 @@
 	<script>$j = jQuery.noConflict(true)</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.2/mootools.js"></script>
 	<script src="js/circle.js"></script>
+	<script src="js/rectangle.js"></script>
 	<script type="text/javascript"> <!-- Ping server (TODO implement AJAX) -->
 		// TODO use ajax to call (shouldn't have to reload page)
 		function ping()
@@ -33,23 +34,26 @@
 		});
 	});
 	</script>
-	<script type="text/javascript"> <!-- Guide Listbox OnChange code -->
+	<script type="text/javascript"> <!-- Infographics Listbox OnChange code -->
 	function OnSelectChange(data) {
-		var imgpath = "img/";
+		var img = document.getElementById("imgGuide");
+		var infotext = document.getElementById("infotext");
 		
 		if (data=="Food") {
-			imgpath += "food.jpg";
+			img.src = "img/food.jpg";
+			infotext.innerHTML = "";
 		} else if (data=="Brewing") {
-			imgpath += "brewing.jpg";
+			img.src = "img/brewing.jpg";
+			infotext.innerHTML = "Image courtesy of <a href=\"http://minecraft.gamepedia.com/Brewing\">MineCraft Wiki</a>";
 		} else if (data=="Redstone") {
-			imgpath += "redstone.jpg";
+			img.src = "img/redstone.jpg";
+			infotext.innerHTML = "";
 		} else if (data=="blankerino") {
-			imgpath = "";
+			img.src = "";
+			infotext.innerHTML = "";
 		}
 		
-		var el = document.getElementById("imgGuide");
-		el.src = imgpath;
-		if (imgpath == "") { el.style.display = 'none'; } else { el.style.display = 'block'; }
+		if (img.src == "") { img.style.display = 'none'; } else { img.style.display = 'block'; }
 	}
 	</script>
 	<?php
@@ -165,16 +169,45 @@
 			</div>
 			<div class="tab-pane" id="circle">
 				<!-- Circle Generator -->
-				Width:&nbsp <input tabindex="1" type="number" size="5" id="diameter" value="8" max="2048" autocomplete="off" autofocus>
-				Block Count: <span id="blockcount"></span><br />
-				Height: <input tabindex="2" type="number" size="5" id="height" value="8" max="2048" autocomplete="off">
-				<select id="thickness" tabindex="3">
-					<option selected="selected">thin</option>
-					<option>thick</option>
-					<option>filled</option>
-				</select>
-				<br /><br />
-				<div id="result"></div>
+				<table border="0" cellpadding="0" cellspacing="0" >
+					<tr>
+						<td valign="left" width="400"> <!-- Circle Generator -->
+							<div class="col-md-16">
+								<h4>Circle Generator</h4>
+								Width:&nbsp <input tabindex="1" type="number" size="5" id="diameter" value="8" max="2048" autocomplete="off" autofocus>
+								Block Count: <span id="blockcount"></span><br />
+								Height: <input tabindex="2" type="number" size="5" id="height" value="8" max="2048" autocomplete="off">
+								<select id="thickness" tabindex="3">
+									<option selected="selected">thin</option>
+									<option>thick</option>
+									<option>filled</option>
+								</select>
+								<br /><br />
+								<div id="result"></div>
+							</div>
+						</td>
+						<!--
+						<td valign="top"  width="450" nowrap> <!-- Rectangle Generator -- >
+							<div class="col-md-16">
+								<h4>Golden Rectangle Generator</h4>
+								<h4>Circle Generator</h4>
+								Width:&nbsp <input tabindex="4" type="number" size="5" id="rectwidth" value="8" max="2048" autocomplete="off">
+								Block Count: <span id="rectblocks"></span><br />
+								Height: <input tabindex="5" type="number" size="5" id="rectheight" value="8" max="2048" autocomplete="off">
+								<br /><br />
+								<div id="golden"></div>
+							</div>
+						</td>
+						-->
+					</tr>
+				</table>
+				
+				
+				
+				
+				
+				
+				
 			</div>
 			<div class="tab-pane" id="guides">
 				<!-- Guides -->
