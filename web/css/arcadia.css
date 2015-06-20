@@ -1,7 +1,8 @@
 body {
 	font-size: 11px;
 	font-family: monospace;
-	overflow: hidden
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 table.circle_output td {
