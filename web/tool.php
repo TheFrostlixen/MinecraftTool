@@ -53,7 +53,7 @@
 			infotext.innerHTML = "";
 		}
 		
-		if (img.src == "") { img.style.display = 'none'; } else { img.style.display = 'block'; }
+		if (img.src == window.location) { img.style.display = 'none'; } else { img.style.display = 'block'; }
 	}
 	</script>
 	<?php
@@ -101,7 +101,6 @@
 		<div id="tab-content" class="tab-content">
 			<div class="tab-pane active" id="player">
 				<!-- Player List -->
-				<div id="url"></div>
 				Server Address: <input type="text" id="server" value=<?php echo $_GET['server']; ?>> <br>
 				Port Number:&nbsp&nbsp&nbsp <input type="number" id="port" min="1" max="99999" value=<?php echo $_GET['port']; ?>> <br>
 				<button type="button" id="ping" onclick="ping()">Ping</button>
@@ -109,7 +108,7 @@
 				<!-- DEBUG <a href="tool.php">return</a> -->
 				<br /><br />
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-md-12">
 						<h4>General Information</h4>
 						<table class="table table-striped">
 							<tbody>
@@ -144,7 +143,7 @@
 							</tbody>
 						</table>
 					</div>
-					<div class="col-md-8" style="font-size:10px;">
+					<div class="col-md-12" style="font-size:10px;">
 						<h4>Players</h4>
 						<?php
 						$url = "https://cravatar.eu/helmavatar/";
@@ -186,7 +185,7 @@
 								<div id="result"></div>
 							</div>
 						</td>
-						<!--
+						<!-- TODO
 						<td valign="top"  width="450" nowrap> <!-- Rectangle Generator -- >
 							<div class="col-md-16">
 								<h4>Golden Rectangle Generator</h4>
@@ -201,13 +200,6 @@
 						-->
 					</tr>
 				</table>
-				
-				
-				
-				
-				
-				
-				
 			</div>
 			<div class="tab-pane" id="guides">
 				<!-- Guides -->
@@ -232,10 +224,9 @@
 								</ul>
 							</div>
 						</td>
-						<td valign="top"  width="450" nowrap> <!-- Guides and infographics -->
+						<td valign="top"  width="750" nowrap> <!-- Guides and infographics -->
 							<div class="col-md-8">
 								<h4>Infographics</h4>
-								<p id="infotext"></p>
 								<select id="guidelist" onchange="OnSelectChange(this.value)">
 									<option selected="selected" disabled="disabled">===</option>
 									<option>Food</option>
@@ -244,6 +235,7 @@
 									<option>blankerino</option>
 								</select>
 								<br /><br />
+								<p id="infotext"></p>
 								<img id="imgGuide">
 							</div>
 						</td>
