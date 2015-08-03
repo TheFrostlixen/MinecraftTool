@@ -10,17 +10,16 @@
 	<script>$j = jQuery.noConflict(true)</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.2/mootools.js"></script>
 	<script src="js/circle.js"></script>
-	<script src="js/rectangle.js"></script>
 	<script type="text/javascript"> <!-- Ping server (TODO implement AJAX) -->
 		// TODO use ajax to call (shouldn't have to reload page)
 		function ping()
 		{
 		/*
-			$j.ajax( { type: "GET", data:{ ping: 'true', server: document.getElementById("server").value, port: document.getElementById("port").value }, success: function(data) {
+			$j.ajax( { type: "GET", data:{ server: document.getElementById("server").value, port: document.getElementById("port").value }, success: function(data) {
 				//alert('complete, returned:' + data); //returns webpage in html...
 			} });
 		*/
-			window.location.href = "?ping=true&server=" + document.getElementById("server").value + "&port=" + document.getElementById("port").value;
+			window.location.href = "?server=" + document.getElementById("server").value + "&port=" + document.getElementById("port").value;
 		}
 	</script>
 	<script type="text/javascript"> <!-- Filter List code -->
@@ -58,7 +57,7 @@
 	</script>
 	<?php
 	// TODO update HTML elements asynch when called
-	if (isset($_GET['ping'])) {
+	if (!empty($_GET['server']) && !empty($_GET['port'])) {
 		$SERVER_IP = $_GET['server']; //"23.95.29.207"; //Insert the IP of the server you want to query. 
 		$SERVER_PORT = $_GET['port']; //"25565"; //Insert the PORT of the server you want to ping. Needed to get the favicon, motd, players online and players max. etc
 
@@ -104,7 +103,7 @@
 				Server Address: <input type="text" id="server" value=<?php echo $_GET['server']; ?>> <br>
 				Port Number:&nbsp&nbsp&nbsp <input type="number" id="port" min="1" max="99999" value=<?php echo $_GET['port']; ?>> <br>
 				<button type="button" id="ping" onclick="ping()">Ping</button>
-				<button type="button" id="ga" onclick=window.location.href="?ping=true&server=23.95.29.207&port=25565">Glass Arcadia</button>
+				<button type="button" id="ga" onclick=window.location.href="?server=23.95.29.207&port=25565">Glass Arcadia</button>
 				<!-- DEBUG <a href="tool.php">return</a> -->
 				<br /><br />
 				<div class="row">
@@ -185,19 +184,6 @@
 								<div id="result"></div>
 							</div>
 						</td>
-						<!-- TODO
-						<td valign="top"  width="450" nowrap> <!-- Rectangle Generator -- >
-							<div class="col-md-16">
-								<h4>Golden Rectangle Generator</h4>
-								<h4>Circle Generator</h4>
-								Width:&nbsp <input tabindex="4" type="number" size="5" id="rectwidth" value="8" max="2048" autocomplete="off">
-								Block Count: <span id="rectblocks"></span><br />
-								Height: <input tabindex="5" type="number" size="5" id="rectheight" value="8" max="2048" autocomplete="off">
-								<br /><br />
-								<div id="golden"></div>
-							</div>
-						</td>
-						-->
 					</tr>
 				</table>
 			</div>
@@ -205,7 +191,7 @@
 				<!-- Guides -->
 				<table border="0" cellpadding="0" cellspacing="0" >
 					<tr>
-						<td valign="left" width="400"> <!-- Block ID filter list -->
+						<td valign="top" width="400"> <!-- Block ID filter list -->
 							<div name="blockID" id="blockID" class="col-md-16">
 								<h4>Block IDs</h4>
 								<input id="filter" >
