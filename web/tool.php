@@ -25,9 +25,17 @@
 	<script type="text/javascript"> <!-- Filter List code -->
 	$j(document).ready(function() {
 		$j('#filter').keyup(function() {
+				/* // regexes are ugly :(
 				var re = new RegExp($j('#filter').val(), "i");
 				$j('#list').children().each( function(i) {
 					var toHide = !re.test($j(this).text());
+					(toHide) ? $j(this).hide() : $j(this).show();
+				});
+				*/
+				var search = $j('#filter').val();
+				$j('#list').children().each( function(i) {
+					// compare case-adjusted search string to case-adjusted list item
+					var toHide = !~$j(this).text().toLowerCase().indexOf( search.toLowerCase() ); // !=boolean NOT, ~=bitwise NOT
 					(toHide) ? $j(this).hide() : $j(this).show();
 				});
 		});
@@ -196,17 +204,19 @@
 								<h4>Block IDs</h4>
 								<input id="filter" >
 								<ul id="list">
-									<?php
-										$blockfile = fopen("blocks.txt", "r");
-										if ($blockfile)
-										{
-											while (($buffer = fgets( $blockfile, filesize("blocks.txt") )) !== false)
+									<table border="0" cellpadding="0" cellspacing="0">
+										<?php
+											$blockfile = fopen("blocks.txt", "r");
+											if ($blockfile)
 											{
-												echo "<li>" . $buffer . "</li>\r\n";
+												while (($buffer = fgets( $blockfile, filesize("blocks.txt") )) !== false)
+												{
+													echo "<li>" . $buffer . "</li>\r\n";	
+												}
 											}
-										}
-										fclose( $blockfile );
-									?>
+											fclose( $blockfile );
+										?>
+									</table>
 								</ul>
 							</div>
 						</td>
